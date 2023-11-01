@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main () {
+int MAT = 100;
+int PFS_not_modified = 8 * 1000000;
+int PFS_modified = 20 * 1000000;
+double pm = 0.7;
+int max_access_time = 200;
+double page_fault_rate = (max_access_time - MAT) / ((1 - pm) * PFS_not_modified + pm * PFS_modified);
+double page_fault_rate_percentage = page_fault_rate * 100;
+printf ("Maximum acceptable page-fault rate: %.5f%%\n", page_fault_rate_percentage);
+return 0;
+}
+
